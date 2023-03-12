@@ -9,10 +9,15 @@
 <body>
     <?php 
     echo 'ola etapa2';
-    echo 'salário'
-    
-    
-    
+    echo 'salário';
+    echo ('O nome do cliente é'.$nome);
+    echo 'o resultado foi '.$res;
+    "Div style='top'><label>funcionario</label>";
+    echo"imput type='text'>";
+    echo"</div>;
+    print('a idade da pessoal é'.$idade);
+    print('o salario%2f este mês',$salario);
+    print('a divisao de %d e l% é f%", $a, $b, $d);
     
     
     
