@@ -6,17 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resposta</title>
 </head>
-<style>
-*{
-
-
-}
-
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 <body>
-<div style="position:relativa;margin:5px; top:50px;left: 200px;">
+<div>
     Calculo da Folha mensal
 </div>  
         <?php
@@ -28,16 +21,16 @@
        $descontos=$salario*$percentual/100;
        $a_receber=$salario-$descontos;
        ?>
-<div style="position:relativa;margin:5px; top:50px;left: 200px;">
+<div>
 O funcionario:<?php echo $nome;?>
 </div>
 <div>
 O Salario total:<?php echo $salario;?>
 </div>
-<div style="position:relativa;margin:5px; top:50px;left: 200px;">
+<div >
 Valor dos Descontos:<?php echo $descontos;?>
 </div>
-<div style="position:relativa;margin:5px; top:50px;left: 200px;">
+<div >
 Líquido a Receber:<?php echo $a_receber;?>
 </div>
 </body>
