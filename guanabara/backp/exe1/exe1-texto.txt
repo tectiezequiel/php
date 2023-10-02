@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RH</title>
+    
+</head>
+<body>
+
+
+
+
+<form name="Form1"  action="" method="get">
+    <p>
+    <label for="numero"> Quantidade de horas trabalhadas </label>
+    <input  type="text" name="numero" id="numero"/>
+    </p>
+    
+    <div> 
+    <p>
+        <input  type="submit" name="Enviar" value="Enviar"/>
+    </p> 
+    </div>
+    </form>
+    <main>
+
+
+
+
+
+<?php 
+$numero=$_GET["numero"];
+$soma=0;
+$menor=0;
+$fat=0;
+
+if (isset($_GET["numero"])) {
+        $numero=$numero;
+        $menor=$numero-1;
+        $maior=$numero+1;
+              
+} 
+
+?>
+
+</section>
+
+<h2>O numero escolhido foi <?php echo $numero;?><h2>
+<h2>O seu antecessor é<?php echo $menor?></h2>
+<h2>O seu sucessor é <?php echo $maior?></h2>
+
+
+
+</body>
+</html>

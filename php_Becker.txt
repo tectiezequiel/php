@@ -1,0 +1,19 @@
+Aula dia 14/04
+
+Comando mais simples:
+Para apenas uma opção.
+
+switch ($pais) {
+            case 1:
+                echo  'Hello Programador!';
+                break;
+            case 2:
+                echo  'Hola, Programador!';
+                break;
+            case 3:
+                echo  'Ciao, Programador!';
+                break;
+            case 4:
+                echo   'Ola, Programador!';
+            default;
+        }

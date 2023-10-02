@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comando for</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+ body {
+    width: 98%;
+    background-image: linear-gradient(120deg, #e3f2fd,#bbdefb,#90caf9,#64b5f6,#42a5f5,#2196f3,#1e88e5,#1976d2,#1565c0,#0d47a1) ; 
+    https://coolors.co/palette/e3f2fd-bbdefb-90caf9-64b5f6-42a5f5-2196f3-1e88e5-1976d2-1565c0-0d47a1
+}
+
+
+</style>
+<body>
+    <div>
+        <form id="for" action="" method="get">
+            <p>Valor para ser calculado</p>
+            <input type="text" name="numero"><br>
+            <select name="missao">
+                <option value="0">Calcular Fatorial(01)</option>
+                <option value="1">A Soma dos Números(02)</option>
+                <option value="2">Cálculo de Média(03)</option>
+                <option value="3">Cálculo de Frações(04)</option>
+            </select>
+            <input type="Submit" name="calc" value="executar">
+        </form>
+    </div>
+
+    <?php
+    //(1) Função para calcular o fatorial de um número
+    function calcularFatorial($numero) {
+        $fatorial = 1;
+        
+        for ($i = 1; $i <= $numero; $i++) {
+            $fatorial *= $i;
+        }
+        
+        return $fatorial;
+    }
+
+    //(2) Função para calcular a soma dos números de 1 até o valor fornecido
+    function somanumero($numero) {
+        $somanumero = 0;
+
+        for ($i = 1; $i <= $numero; $i++) {
+            $somanumero += $i;
+        }
+
+        return $somanumero;
+    }
+
+    //(3) Função para calcular a média dos números de 1 até o valor fornecido
+    function media($numero) {
+        $somanumero = somanumero($numero);
+        $media = $somanumero / ($numero - 0.5);
+
+        return $media;
+    }
+
+    //(4) Função para calcular fração
+    function Fracao($numero) {
+        $fracao = 0;
+
+        for ($i = 1; $i <= $numero; $i++) {
+            $fracao += 1 / $i;
+        }
+
+        return $fracao;
+    }
+    ?>
+<main>
+    <?php 
+    if(isset($_GET["numero"])) {
+        $numero = $_GET["numero"];
+
+        if(isset($_GET["missao"])) {
+            $opc = $_GET["missao"];
+
+            switch ($opc) {
+                case 0:
+                    // Fatorial
+                    if (!is_numeric($numero) || $numero < 0 || intval($numero) != $numero) {
+                        echo "Número inválido. Por favor, digite um número inteiro positivo.";
+                        exit;
+                    }
+                    
+                    $resultado = calcularFatorial($numero);
+                    echo "O fatorial de $numero é: $resultado";
+                    break;
+
+                case 1:
+                    // Soma
+                    $resultado = somanumero($numero);
+                    echo "<br>(2) A soma dos números até $numero é: $resultado";
+                    break;
+
+                case 2:
+                    // Média
+                    $resultado  = media($numero);
+                    echo "<br>(3) A média dos números até $numero é: $resultado";			
+                    break;
+
+                case 3:
+                    // Frações
+                    $resultado  = Fracao($numero);
+                    echo "<br>(4) A soma das frações 1/1 + 1/2 + 1/3 + ... + 1/$numero é: $resultado";			
+                    break;
+            }
+        }
+    }
+    ?>
+    </main>
+</body>
+</html>
